@@ -195,7 +195,7 @@ table.index td { text-align: left; vertical-align: top; }
 #content {
     margin-left: 18em;
     padding: 1em;
-    width: 700px;
+    min-width: 700px;
     min-height: 30em;
     border-left: 2px solid #cccccc;
     border-right: 2px solid #cccccc;
