@@ -1107,6 +1107,13 @@ function Module:process_see_reference (s,modules,istype)
       lua_manual_ref = global.lua_manual_ref
    end
 
+   -- Perform tparam aliasing for types.
+   if istype then
+      local alias = doc.get_alias(s)
+      if alias and alias.modifiers and alias.modifiers.type then
+         s = alias.modifiers.type
+      end
+   end
    -- is this a fully qualified module name?
    local mod_ref = modules.by_name[s]
    if ismod(mod_ref) then return reference(s, mod_ref,nil) end
