@@ -41,17 +41,6 @@ return [==[
 # end
 </ul>
 
-# --------- contents of module -------------
-# if module and not ldoc.no_summary and #module.items > 0 then
-<h2>Contents</h2>
-<ul>
-# for kind,items in module.kinds() do
-<li><a href="#$(no_spaces(kind))">$(kind)</a></li>
-# end
-</ul>
-# end
-
-
 # if ldoc.no_summary and module and not ldoc.one then -- bang out the functions on the side
 # for kind, items in module.kinds() do
 <h2>$(kind)</h2>
@@ -75,6 +64,16 @@ return [==[
   <li><a href="$(ldoc.ref_to_module(mod))">$(name)</a></li>
 #   end
 #  end
+# end
+</ul>
+# end
+
+# --------- contents of module -------------
+# if module and not ldoc.no_summary and #module.items > 0 then
+<h2>Contents</h2>
+<ul>
+# for kind,items in module.kinds() do
+<li><a href="#$(no_spaces(kind))">$(kind)</a></li>
 # end
 </ul>
 # end
