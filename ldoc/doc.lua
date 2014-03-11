@@ -385,9 +385,22 @@ function File:finish()
                   end
                   item.section = item.type
                end
-            elseif item.tags.within then -- ad-hoc section...
-               section_description = item.tags.within
-               item.section = section_description
+            elseif item.tags.within then
+               local oldsection
+               for _, section in pairs(this_mod.sections) do
+                  if section.name == item.tags.within then
+                     oldsection = section
+                     break
+                  end
+               end
+               if oldsection then
+                  print("Found old section for within tag " .. item.tags.within)
+                  section_description = oldsection.display_name .. ' '
+                  item.section = oldsection.display_name
+               else
+                  section_description = item.tags.within
+                  item.section = section_description
+               end
             else -- otherwise, just goes into the default sections (Functions,Tables,etc)
                item.section = item.type;
             end
