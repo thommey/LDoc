@@ -74,7 +74,6 @@ body {
 
 code, tt { font-family: monospace; }
 span.parameter { font-family:monospace; }
-span.parameter:after { content:":"; }
 span.types:before { content:"("; }
 span.types:after { content:")"; }
 .type { font-weight: bold; font-style:italic }

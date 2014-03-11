@@ -183,7 +183,9 @@ return [==[
 #       if tp ~= '' then
             <span class="types">$(tp)</span>
 #       end
-        $(M(item.params[p],item))
+#       if item.params[p] ~= '' then
+           - $(M(item.params[p],item))
+#       end
 #       if def then
          (<em>default</em> $(def))
 #       end
