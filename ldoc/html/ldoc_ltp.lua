@@ -33,11 +33,13 @@ return [==[
 <br/>
 <h1>$(ldoc.project)</h1>
 
-# if not ldoc.single and module then -- reference back to project index
 <ul>
+# if not ldoc.single and module then -- reference back to project index
   <li><a href="../$(ldoc.output).html">Index</a></li>
-</ul>
+# else
+  <li><strong>Index</strong></li>
 # end
+</ul>
 
 # --------- contents of module -------------
 # if module and not ldoc.no_summary and #module.items > 0 then
