@@ -299,7 +299,7 @@ function html.generate_output(ldoc, args, project)
    for m in mods:iter() do
       local kind, lkind, modules = unpack(m)
       check_directory(args.dir..lkind)
-      project:put_kind_first(kind)
+--      project:put_kind_first(kind)
       for m in modules() do
          ldoc.module = m
          ldoc.body = m.body
