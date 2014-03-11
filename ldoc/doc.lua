@@ -206,6 +206,12 @@ function File:find_module_in_files (name)
          end
       end
    end
+   -- search self for existing modules
+   for m in self.modules:iter() do
+      if m.name == name then
+         return m,self.name
+      end
+   end
 end
 
 local function init_within_section (mod,name)
