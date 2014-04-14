@@ -249,7 +249,7 @@ function File:finish()
             if self.args.merge then
                local mod,mf = self:find_module_in_files(item.name)
                if mod then
-                  print('found master module',mf)
+--                print('found master module',mf)
                   this_mod = mod
                   if this_mod.section then
                      print '***closing section from master module***'
